@@ -6,6 +6,7 @@ public class CompareNumber {
 
 
 
+
 	public int Strike(List<Integer> playerNum , List<Integer> comNum){
 		int strikeCount = 0;
 		for(int i = 0; i < playerNum.size() ; i++){

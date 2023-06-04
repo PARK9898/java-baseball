@@ -5,6 +5,7 @@ import java.util.List;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+
 public class Number {
 	private static NumberValidator numberValidator = new NumberValidator();
 	private List<Integer> numbers = new ArrayList<>();

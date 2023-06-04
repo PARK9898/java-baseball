@@ -19,6 +19,7 @@ public class Game {
 
 	}
 
+
 	public void playGame(){
 		playerNumber = Number.PlayerNum(inputView.inputNumbers());
 
