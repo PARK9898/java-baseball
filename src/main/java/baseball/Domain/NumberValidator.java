@@ -12,14 +12,14 @@ public class NumberValidator {
 
 	public void checkDuplicate(List<Integer> numbers){
 		Set<Integer> numberSet = new HashSet<>(numbers);
-		if(numberSet.size()!= numbers.size()) {
+		if(numberSet.size() != numbers.size()) {
 			throw new IllegalArgumentException("숫자는 중복되면 안됩니다");
 		}
 	}
 
 	public void checkRange(List<Integer> numbers){
 		for(Integer a : numbers){
-			if(a < MIN || a > MAX){
+			if(a < MIN || MAX < a){
 				throw new IllegalArgumentException("숫자는" + MIN + "이상" + MAX + "이하여야 합니다.");
 			}
 		}
