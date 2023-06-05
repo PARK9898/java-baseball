@@ -14,6 +14,6 @@ public class Application {
         do {
             new Game().playGame();
         }
-        while (INPUT_VIEW.StopOrContinue());
+        while (INPUT_VIEW.Continue());
     }
 }

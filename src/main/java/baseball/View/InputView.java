@@ -25,7 +25,7 @@ public class InputView {
 		return inputNumbers;
 	}
 
-	public boolean StopOrContinue(){
+	public boolean Continue(){
 		System.out.println("게임을 새로 시작하려면 1 종료하려면 2를 눌러주세요");
 		int number = Integer.parseInt(Console.readLine());
 
@@ -35,6 +35,6 @@ public class InputView {
 		if(number == 2){
 			return false;
 		}
-		return StopOrContinue();
+		return Continue();
 	}
 }
