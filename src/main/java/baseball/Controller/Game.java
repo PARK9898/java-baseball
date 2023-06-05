@@ -1,7 +1,7 @@
 package baseball.Controller;
 
 import baseball.Domain.CompareNumber;
-import baseball.Domain.Number;
+import baseball.Domain.Numbers;
 import baseball.View.InputView;
 import baseball.View.OutputView;
 
@@ -11,29 +11,18 @@ public class Game {
 	private OutputView outputView = new OutputView();
 	private CompareNumber compareNumber = new CompareNumber();
 
-	private Number computerNumber;
-	private Number playerNumber;
-
-	public Game() {
-		this.computerNumber = Number.ComputerNum();
-
-	}
-
 
 	public void playGame(){
-		playerNumber = Number.PlayerNum(inputView.inputNumbers());
+		Numbers playerNumbers = Numbers.PlayerNumbers(inputView.inputNumbers());
+		Numbers computerNumbers = Numbers.ComputerNumbers();
 
-		outputView.printResult(compareNumber.Strike(computerNumber.getNumbers() ,playerNumber.getNumbers()),
-			compareNumber.Ball(computerNumber.getNumbers() ,playerNumber.getNumbers()));
+		outputView.printResult(compareNumber.strike(computerNumbers.getNumbers() ,playerNumbers.getNumbers()),
+			compareNumber.ball(computerNumbers.getNumbers() ,playerNumbers.getNumbers()));
 
-		if(compareNumber.Strike(computerNumber.getNumbers() ,playerNumber.getNumbers()) == 3){
-			outputView.printFinsh();
+		if(compareNumber.strike(computerNumbers.getNumbers() ,playerNumbers.getNumbers()) == 3){
+			outputView.printFinish();
 			return;
 		}
 		playGame();
-
 	}
-
-
-
 }
