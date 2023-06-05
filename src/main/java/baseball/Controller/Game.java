@@ -16,10 +16,10 @@ public class Game {
 		Numbers playerNumbers = Numbers.PlayerNumbers(inputView.inputNumbers());
 		Numbers computerNumbers = Numbers.ComputerNumbers();
 
-		outputView.printResult(compareNumber.strike(computerNumbers.getNumbers() ,playerNumbers.getNumbers()),
-			compareNumber.ball(computerNumbers.getNumbers() ,playerNumbers.getNumbers()));
+		outputView.printResult(compareNumber.countStrike(computerNumbers.getNumbers() ,playerNumbers.getNumbers()),
+			compareNumber.countBall(computerNumbers.getNumbers() ,playerNumbers.getNumbers()));
 
-		if(compareNumber.strike(computerNumbers.getNumbers() ,playerNumbers.getNumbers()) == 3){
+		if(compareNumber.countStrike(computerNumbers.getNumbers() ,playerNumbers.getNumbers()) == 3){
 			outputView.printFinish();
 			return;
 		}
