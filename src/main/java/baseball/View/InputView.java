@@ -9,20 +9,20 @@ public class InputView {
 
 	public List<Integer> inputNumbers(){
 
-		List<Integer> inputNum = new ArrayList<>();
+		List<Integer> inputNumbers = new ArrayList<>();
 
 		System.out.println("숫자를 입력해주세요 : ");
 		String input = Console.readLine();
 
-		for(int i = 0; i < input.length() ; i++){
+		for(int i = 0; i < input.length(); i++){
 			int number = Character.getNumericValue(input.charAt(i));
 			if(number == -1){
 				throw new IllegalArgumentException("문자가 아닌 숫자를 입력해주세요.");
-			}else{
-				inputNum.add(Character.getNumericValue(input.charAt(i)));
+			} else {
+				inputNumbers.add(Character.getNumericValue(input.charAt(i)));
 			}
 		}
-		return inputNum;
+		return inputNumbers;
 	}
 
 	public boolean StopOrContinue(){
@@ -37,6 +37,4 @@ public class InputView {
 		}
 		return StopOrContinue();
 	}
-
-
 }
