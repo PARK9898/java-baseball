@@ -13,8 +13,8 @@ public class Game {
 
 
 	public void playGame(){
-		Numbers playerNumbers = Numbers.PlayerNumbers(inputView.inputNumbers());
-		Numbers computerNumbers = Numbers.ComputerNumbers();
+		Numbers playerNumbers = Numbers.makePlayerNumbers(inputView.inputNumbers());
+		Numbers computerNumbers = Numbers.makeComputerNumbers();
 
 		outputView.printResult(compareNumber.countStrike(computerNumbers.getNumbers() ,playerNumbers.getNumbers()),
 			compareNumber.countBall(computerNumbers.getNumbers() ,playerNumbers.getNumbers()));
