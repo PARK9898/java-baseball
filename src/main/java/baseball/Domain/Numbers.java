@@ -15,22 +15,16 @@ public class Numbers {
 		this.numbers = numbers;
 	}
 
-	public static Numbers ComputerNumbers(){
+	public static Numbers makeComputerNumbers(){
+		List<Integer> comNumbers = new ArrayList<>();
 
-		List<Integer> ComNumbers = new ArrayList<>();
-		while(ComNumbers.size() < 3){
-			int number = Randoms.pickNumberInRange(1,9);
-			if(!ComNumbers.contains(number)){
-				ComNumbers.add(number);
-			}
-		}
+		comNumbers = makeRandomNumbers();
+		checkValidate(comNumbers);
 
-		checkValidate(ComNumbers);
-
-		return new Numbers(ComNumbers);
+		return new Numbers(comNumbers);
 	}
 
-	public static Numbers PlayerNumbers(List<Integer> playerNum){
+	public static Numbers makePlayerNumbers(List<Integer> playerNum){
 		checkValidate(playerNum);
 
 		return new Numbers(playerNum);
@@ -38,6 +32,17 @@ public class Numbers {
 
 	public List<Integer> getNumbers() {
 		return numbers;
+	}
+
+	public static List<Integer> makeRandomNumbers(){
+		List<Integer> comNumbers = new ArrayList<>();
+		while(comNumbers.size() < 3){
+			int number = Randoms.pickNumberInRange(1,9);
+			if(!comNumbers.contains(number)){
+				comNumbers.add(number);
+			}
+		}
+		return comNumbers;
 	}
 
 	private static void checkValidate(List<Integer> numbers){
